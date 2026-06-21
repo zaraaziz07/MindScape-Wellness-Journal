@@ -3,14 +3,14 @@
 #include <sstream>
 using namespace std;
 
-// ---------- Constructors ----------
+
 
 JournalEntry::JournalEntry() {
     id = 0;
     date = "";
     title = "";
     contentHtml = "";
-    moodRating = 5; // neutral default
+    moodRating = 5; 
 }
 
 JournalEntry::JournalEntry(int id, string date, string title, string contentHtml, int moodRating) {
@@ -21,7 +21,7 @@ JournalEntry::JournalEntry(int id, string date, string title, string contentHtml
     this->moodRating = moodRating;
 }
 
-// ---------- Getters ----------
+
 
 int JournalEntry::getId() const {
     return id;
@@ -51,7 +51,7 @@ vector<string> JournalEntry::getStickerPaths() const {
     return stickerPaths;
 }
 
-// ---------- Setters ----------
+
 
 void JournalEntry::setDate(string newDate) {
     date = newDate;
@@ -71,7 +71,7 @@ void JournalEntry::setMoodRating(int newMood) {
     moodRating = newMood;
 }
 
-// ---------- Tag management ----------
+
 
 void JournalEntry::addTag(string tag) {
     if (!hasTag(tag)) {
@@ -95,7 +95,7 @@ bool JournalEntry::hasTag(string tag) const {
     return false;
 }
 
-// ---------- Sticker management ----------
+
 
 void JournalEntry::addSticker(string imagePath) {
     stickerPaths.push_back(imagePath);
@@ -110,9 +110,7 @@ void JournalEntry::removeSticker(string imagePath) {
     }
 }
 
-// ---------- Utility ----------
 
-// Removes HTML tags so history page can show a clean text preview
 string JournalEntry::getPlainTextPreview(int maxLength) const {
     string plain = "";
     bool insideTag = false;
@@ -136,8 +134,7 @@ string JournalEntry::getPlainTextPreview(int maxLength) const {
     return plain;
 }
 
-// Converts entry into one line of text, using "|" as a separator, so it can be saved to a file.
-// Tags and stickers are separated internally using "~" so commas/text inside them are not an issue.
+
 string JournalEntry::toFileString() const {
     stringstream ss;
     ss << id << "|" << date << "|" << title << "|" << contentHtml << "|" << moodRating << "|";
@@ -156,7 +153,7 @@ string JournalEntry::toFileString() const {
     return ss.str();
 }
 
-// Splits a saved line back into a JournalEntry. Must match the exact order used in toFileString().
+
 JournalEntry JournalEntry::fromFileString(string line) {
     vector<string> parts;
     stringstream ss(line);
@@ -194,17 +191,16 @@ JournalEntry JournalEntry::fromFileString(string line) {
     return entry;
 }
 
-// ---------- Operator overloads ----------
+
 
 bool JournalEntry::operator<(const JournalEntry& other) const {
-    return date < other.date; // works because "YYYY-MM-DD" sorts correctly as plain text
+    return date < other.date; 
 }
 
 bool JournalEntry::operator==(const JournalEntry& other) const {
     return id == other.id;
 }
 
-// ---------- Console testing helper ----------
 
 void JournalEntry::display() const {
     cout << "------------------------------" << endl;
