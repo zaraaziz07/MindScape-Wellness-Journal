@@ -1,0 +1,41 @@
+# Visual Studio
+.vs/
+
+# Build folders
+Debug/
+Release/
+x64/
+x86/
+
+# Visual Studio user files
+*.vcxproj.user
+*.vcproj.user
+*.suo
+
+# Build output
+*.obj
+*.o
+*.exe
+*.dll
+*.lib
+*.exp
+*.ilk
+*.pdb
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.cache
+
+# Qt generated files (if using Qt)
+moc_*
+ui_*.h
+qrc_*.cpp
+
+# CMake (if used)
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
