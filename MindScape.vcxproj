@@ -18,6 +18,19 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\Entrymanager.cpp" />
+    <ClCompile Include="src\Journalentry.cpp" />
+    <ClCompile Include="src\Moodentry.cpp" />
+    <ClCompile Include="src\Moodmanager.cpp" />
+    <ClCompile Include="src\tester.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Entrymanager.h" />
+    <ClInclude Include="src\Journalentry.h" />
+    <ClInclude Include="src\Moodentry.h" />
+    <ClInclude Include="src\Moodmanager.h" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
@@ -122,12 +135,6 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClInclude Include="Journalentry.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="Journalentry.cpp" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
