@@ -1,1 +1,1 @@
-# MindLink-Wellness-Journal
+# MindScape-Wellness-Journal
