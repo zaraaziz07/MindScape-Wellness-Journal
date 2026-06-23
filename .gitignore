@@ -10,6 +10,7 @@ x86/
 # Visual Studio user files
 *.vcxproj.user
 *.vcproj.user
+*.vcproj.filters
 *.suo
 
 # Build output
