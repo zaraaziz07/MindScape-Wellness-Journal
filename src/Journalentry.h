@@ -5,15 +5,21 @@
 #include <vector>
 using namespace std;
 
+struct PlacedSticker {
+    string stickerId; 
+    int x;
+    int y;
+};
+
 class JournalEntry {
 private:
     int id;                      
-    string date;                
-    string title;                
+    string date;                 
+    string title;               
     string contentHtml;          
-    int moodRating;              
+    int moodRating;             
     vector<string> tags;         
-    vector<string> stickerPaths; 
+    vector<PlacedSticker> stickers; 
 
 public:
    
@@ -27,29 +33,30 @@ public:
     string getContentHtml() const;
     int getMoodRating() const;
     vector<string> getTags() const;
-    vector<string> getStickerPaths() const;
+    vector<PlacedSticker> getStickers() const;
 
-    
+   
     void setDate(string newDate);
     void setTitle(string newTitle);
     void setContentHtml(string newContentHtml);
     void setMoodRating(int newMood);
 
-   
+  
     void addTag(string tag);
     void removeTag(string tag);
     bool hasTag(string tag) const;
 
    
-    void addSticker(string imagePath);
-    void removeSticker(string imagePath);
+    void addSticker(string stickerId, int x, int y);
+    void removeSticker(string stickerId);
+    void updateStickerPosition(string stickerId, int newX, int newY); 
 
-   
+    
     string getPlainTextPreview(int maxLength = 60) const; 
-    string toFileString() const;                         
+    string toFileString() const;                          
     static JournalEntry fromFileString(string line);      
 
-  
+   
     bool operator<(const JournalEntry& other) const;  
     bool operator==(const JournalEntry& other) const; 
 

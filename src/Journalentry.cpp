@@ -1,16 +1,14 @@
-#include "Journalentry.h"
+#include "JournalEntry.h"
 #include <iostream>
 #include <sstream>
 using namespace std;
-
-
 
 JournalEntry::JournalEntry() {
     id = 0;
     date = "";
     title = "";
     contentHtml = "";
-    moodRating = 5; 
+    moodRating = 5;
 }
 
 JournalEntry::JournalEntry(int id, string date, string title, string contentHtml, int moodRating) {
@@ -20,8 +18,6 @@ JournalEntry::JournalEntry(int id, string date, string title, string contentHtml
     this->contentHtml = contentHtml;
     this->moodRating = moodRating;
 }
-
-
 
 int JournalEntry::getId() const {
     return id;
@@ -47,11 +43,9 @@ vector<string> JournalEntry::getTags() const {
     return tags;
 }
 
-vector<string> JournalEntry::getStickerPaths() const {
-    return stickerPaths;
+vector<PlacedSticker> JournalEntry::getStickers() const {
+    return stickers;
 }
-
-
 
 void JournalEntry::setDate(string newDate) {
     date = newDate;
@@ -70,8 +64,6 @@ void JournalEntry::setMoodRating(int newMood) {
     if (newMood > 10) newMood = 10;
     moodRating = newMood;
 }
-
-
 
 void JournalEntry::addTag(string tag) {
     if (!hasTag(tag)) {
@@ -95,21 +87,32 @@ bool JournalEntry::hasTag(string tag) const {
     return false;
 }
 
-
-
-void JournalEntry::addSticker(string imagePath) {
-    stickerPaths.push_back(imagePath);
+void JournalEntry::addSticker(string stickerId, int x, int y) {
+    PlacedSticker s;
+    s.stickerId = stickerId;
+    s.x = x;
+    s.y = y;
+    stickers.push_back(s);
 }
 
-void JournalEntry::removeSticker(string imagePath) {
-    for (int i = 0; i < (int)stickerPaths.size(); i++) {
-        if (stickerPaths[i] == imagePath) {
-            stickerPaths.erase(stickerPaths.begin() + i);
+void JournalEntry::removeSticker(string stickerId) {
+    for (int i = 0; i < (int)stickers.size(); i++) {
+        if (stickers[i].stickerId == stickerId) {
+            stickers.erase(stickers.begin() + i);
             return;
         }
     }
 }
 
+void JournalEntry::updateStickerPosition(string stickerId, int newX, int newY) {
+    for (int i = 0; i < (int)stickers.size(); i++) {
+        if (stickers[i].stickerId == stickerId) {
+            stickers[i].x = newX;
+            stickers[i].y = newY;
+            return;
+        }
+    }
+}
 
 string JournalEntry::getPlainTextPreview(int maxLength) const {
     string plain = "";
@@ -120,7 +123,8 @@ string JournalEntry::getPlainTextPreview(int maxLength) const {
         if (c == '<') {
             insideTag = true;
         }
-        else if (c == '>') {
+        else if (c == '>')
+        {
             insideTag = false;
         }
         else if (!insideTag) {
@@ -134,7 +138,6 @@ string JournalEntry::getPlainTextPreview(int maxLength) const {
     return plain;
 }
 
-
 string JournalEntry::toFileString() const {
     stringstream ss;
     ss << id << "|" << date << "|" << title << "|" << contentHtml << "|" << moodRating << "|";
@@ -145,14 +148,13 @@ string JournalEntry::toFileString() const {
     }
     ss << "|";
 
-    for (int i = 0; i < (int)stickerPaths.size(); i++) {
-        ss << stickerPaths[i];
-        if (i != (int)stickerPaths.size() - 1) ss << "~";
+    for (int i = 0; i < (int)stickers.size(); i++) {
+        ss << stickers[i].stickerId << "^" << stickers[i].x << "^" << stickers[i].y;
+        if (i != (int)stickers.size() - 1) ss << "~";
     }
 
     return ss.str();
 }
-
 
 JournalEntry JournalEntry::fromFileString(string line) {
     vector<string> parts;
@@ -182,25 +184,34 @@ JournalEntry JournalEntry::fromFileString(string line) {
 
     if (parts.size() >= 7 && parts[6] != "") {
         stringstream stickerStream(parts[6]);
-        string sticker;
-        while (getline(stickerStream, sticker, '~')) {
-            entry.stickerPaths.push_back(sticker);
+        string stickerEntry;
+        while (getline(stickerStream, stickerEntry, '~')) {
+            stringstream fieldStream(stickerEntry);
+            string idPart, xPart, yPart;
+            getline(fieldStream, idPart, '^');
+            getline(fieldStream, xPart, '^');
+            getline(fieldStream, yPart, '^');
+
+            if (!idPart.empty() && !xPart.empty() && !yPart.empty()) {
+                PlacedSticker s;
+                s.stickerId = idPart;
+                s.x = stoi(xPart);
+                s.y = stoi(yPart);
+                entry.stickers.push_back(s);
+            }
         }
     }
 
     return entry;
 }
 
-
-
 bool JournalEntry::operator<(const JournalEntry& other) const {
-    return date < other.date; 
+    return date < other.date;
 }
 
 bool JournalEntry::operator==(const JournalEntry& other) const {
     return id == other.id;
 }
-
 
 void JournalEntry::display() const {
     cout << "------------------------------" << endl;
@@ -216,6 +227,9 @@ void JournalEntry::display() const {
     }
     cout << endl;
 
-    cout << "Stickers attached: " << stickerPaths.size() << endl;
+    cout << "Stickers attached: " << stickers.size() << endl;
+    for (int i = 0; i < (int)stickers.size(); i++) {
+        cout << "  - " << stickers[i].stickerId << " at (" << stickers[i].x << ", " << stickers[i].y << ")" << endl;
+    }
     cout << "------------------------------" << endl;
 }
