@@ -1,4 +1,4 @@
-#include "JournalEntry.h"
+#include "Journalentry.h"
 #include <iostream>
 #include <sstream>
 using namespace std;

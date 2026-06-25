@@ -1,10 +1,10 @@
 #ifndef APPCONTROLLER_H
 #define APPCONTROLLER_H
 
-#include "EntryManager.h"
-#include "MoodManager.h"
-#include "QuoteManager.h"
-#include "HabitManager.h"
+#include "Entrymanager.h"
+#include "Moodmanager.h"
+#include "Quotemanager.h"
+#include "Habitmanager.h"
 #include <string>
 using namespace std;
 

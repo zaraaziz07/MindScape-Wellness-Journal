@@ -19,17 +19,28 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\Appcontroller.cpp" />
     <ClCompile Include="src\Entrymanager.cpp" />
+    <ClCompile Include="src\Habit.cpp" />
+    <ClCompile Include="src\Habitlog.cpp" />
+    <ClCompile Include="src\Habitmanager.cpp" />
     <ClCompile Include="src\Journalentry.cpp" />
     <ClCompile Include="src\Moodentry.cpp" />
     <ClCompile Include="src\Moodmanager.cpp" />
-    <ClCompile Include="src\tester.cpp" />
+    <ClCompile Include="src\Quote.cpp" />
+    <ClCompile Include="src\Quotemanager.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Appcontroller.h" />
     <ClInclude Include="src\Entrymanager.h" />
+    <ClInclude Include="src\Habit.h" />
+    <ClInclude Include="src\Habitlog.h" />
+    <ClInclude Include="src\Habitmanager.h" />
     <ClInclude Include="src\Journalentry.h" />
     <ClInclude Include="src\Moodentry.h" />
     <ClInclude Include="src\Moodmanager.h" />
+    <ClInclude Include="src\Quote.h" />
+    <ClInclude Include="src\Quotemanager.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>

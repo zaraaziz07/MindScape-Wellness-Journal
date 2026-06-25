@@ -3,7 +3,7 @@
 
 #include <string>
 #include <vector>
-#include "JournalEntry.h"
+#include "Journalentry.h"
 using namespace std;
 
 class EntryManager {

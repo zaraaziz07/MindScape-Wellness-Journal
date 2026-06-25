@@ -4,7 +4,7 @@
 #include <string>
 #include <vector>
 #include "Habit.h"
-#include "HabitLog.h"
+#include "Habitlog.h"
 using namespace std;
 
 class HabitManager {

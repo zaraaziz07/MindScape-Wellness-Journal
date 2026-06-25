@@ -1,4 +1,4 @@
-#include "QuoteManager.h"
+#include "Quotemanager.h"
 #include <iostream>
 #include <fstream>
 #include <sstream>

@@ -1,4 +1,4 @@
-#include "MoodManager.h"
+#include "Moodmanager.h"
 #include <iostream>
 #include <fstream>
 #include <algorithm>

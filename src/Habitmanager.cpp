@@ -1,4 +1,4 @@
-#include "HabitManager.h"
+#include "Habitmanager.h"
 #include <iostream>
 #include <fstream>
 #include <algorithm>
@@ -31,7 +31,7 @@ int HabitManager::addHabit(string name, string icon) {
 bool HabitManager::removeHabit(int habitId) {
     Habit* h = getHabitById(habitId);
     if (h == nullptr) return false;
-    h->setActive(false); // soft delete, so past logs/streaks for this habit still make sense
+    h->setActive(false); 
     saveHabitsToFile();
     return true;
 }
@@ -64,9 +64,7 @@ vector<Habit> HabitManager::getAllActiveHabits() const {
     return result;
 }
 
-// Flips the completion status for a habit on a given date.
-// If no log exists yet for that habit+date, creates one marked as completed.
-// If one exists, flips it (done -> not done, or not done -> done).
+
 bool HabitManager::toggleHabitForDate(int habitId, string date) {
     for (int i = 0; i < (int)logs.size(); i++) {
         if (logs[i].getHabitId() == habitId && logs[i].getDate() == date) {
@@ -76,7 +74,7 @@ bool HabitManager::toggleHabitForDate(int habitId, string date) {
         }
     }
 
-    // no log existed yet for this habit+date, so create one marked completed
+    
     HabitLog newLog(habitId, date, true);
     logs.push_back(newLog);
     saveLogsToFile();
@@ -89,7 +87,7 @@ bool HabitManager::isHabitCompletedOnDate(int habitId, string date) const {
             return logs[i].getCompleted();
         }
     }
-    return false; // no log means not completed
+    return false; 
 }
 
 vector<HabitLog> HabitManager::getLogsForDate(string date) const {
@@ -102,8 +100,7 @@ vector<HabitLog> HabitManager::getLogsForDate(string date) const {
     return result;
 }
 
-// Counts how many active habits were completed on a given date.
-// Used directly for the "3/5 habits completed today" counter in the UI.
+
 int HabitManager::getCompletedCountForDate(string date) const {
     int count = 0;
     vector<Habit> active = getAllActiveHabits();
@@ -119,7 +116,7 @@ int HabitManager::getTotalActiveHabitCount() const {
     return (int)getAllActiveHabits().size();
 }
 
-// ---------- Date helpers (same pattern used in EntryManager) ----------
+
 
 int HabitManager::dateToNumber(string date) const {
     string yearPart = date.substr(0, 4);
@@ -160,9 +157,9 @@ bool HabitManager::isOneDayApart(string laterDate, string earlierDate) const {
     return false;
 }
 
-// Counts consecutive days (ending on todayDate) where this specific habit was completed.
+
 int HabitManager::getHabitStreak(int habitId, string todayDate) const {
-    // collect all dates where this habit was marked completed
+   
     vector<string> completedDates;
     for (int i = 0; i < (int)logs.size(); i++) {
         if (logs[i].getHabitId() == habitId && logs[i].getCompleted()) {
@@ -176,7 +173,7 @@ int HabitManager::getHabitStreak(int habitId, string todayDate) const {
         return dateToNumber(a) > dateToNumber(b);
         });
 
-    if (completedDates[0] != todayDate) return 0; // streak broken if not done today
+    if (completedDates[0] != todayDate) return 0; 
 
     int streak = 1;
     for (int i = 0; i < (int)completedDates.size() - 1; i++) {
@@ -190,7 +187,7 @@ int HabitManager::getHabitStreak(int habitId, string todayDate) const {
     return streak;
 }
 
-// ---------- File persistence ----------
+
 
 bool HabitManager::saveHabitsToFile() const {
     ofstream file(habitsFilePath);
@@ -250,7 +247,7 @@ bool HabitManager::loadLogsFromFile() {
     return true;
 }
 
-// ---------- Console testing helpers ----------
+
 
 void HabitManager::displayAllHabits() const {
     cout << "===== All Habits (" << habits.size() << ") =====" << endl;
