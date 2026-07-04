@@ -1,0 +1,2304 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>650</height>
+   </rect>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>1000</width>
+    <height>16777215</height>
+   </size>
+  </property>
+  <property name="font">
+   <font>
+    <family>Segoe Print</family>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QMainWindow {
+    background-color: #FFF0F3;
+}
+QWidget {
+    background-color: transparent;
+}
+QWidget#centralwidget {
+    background-color: #FFF0F3;
+}
+QWidget#pageHome {
+    background-color: #FFF0F3;
+}
+QLabel {
+    background-color: transparent;
+}
+QPushButton#btnJournal,
+QPushButton#btnMood,
+QPushButton#btnQuote,
+QPushButton#btnHabits,
+QPushButton#btnBooks,
+QPushButton#btnHistory {
+    background-color: #FFFFFF;
+    border: 1.5px solid #F7C5D5;
+    border-radius: 18px;
+    font-size: 26px;
+    font-weight: bold;
+    color: #C45C8A;
+}
+QPushButton#btnJournal:hover,
+QPushButton#btnMood:hover,
+QPushButton#btnQuote:hover,
+QPushButton#btnHabits:hover,
+QPushButton#btnBooks:hover,
+QPushButton#btnHistory:hover {
+    background-color: #FFE4EE;
+    border-color: #E8649A;
+}
+QLabel#labelAppName {
+    font-size: 55px;
+    font-weight: bold;
+    color: #E8649A;
+}
+QLabel#labelGreeting {
+    font-size: 18px;
+    color: #B07090;
+}
+QLabel#labelStreak {
+    font-size: 14px;
+    color: #E8649A;
+    background-color: #FFE4EE;
+    border-radius: 12px;
+    padding: 8px 16px;
+    border: 1px solid #F7C5D5;
+}
+QFrame#streakFrame {
+    background-color: #FFE4EE;
+    border: 1.5px solid #F7C5D5;
+    border-radius: 16px;
+    padding: 10px;
+}
+
+QLabel#labelStreakNumber {
+    font-size: 22px;
+    font-weight: bold;
+    color: #E8649A;
+    background: transparent;
+}
+
+QLabel#labelStreakSub {
+    font-size: 11px;
+    color: #B07090;
+    background: transparent;
+}
+
+QLabel#labelDayMon, QLabel#labelDayTue, QLabel#labelDayWed,
+QLabel#labelDayThu, QLabel#labelDayFri, QLabel#labelDaySat,
+QLabel#labelDaySun {
+    font-size: 11px;
+    font-weight: bold;
+    color: #C45C8A;
+    background: transparent;
+    min-width: 24px;
+}
+QLabel#myJournal
+{
+ font-size: 40px;
+    font-weight: bold;
+    color: #E8649A;
+
+}
+/* 🌿 Grateful */
+QPushButton#btnTagGrateful{
+    background:#F8EBCF;
+    border:1.5px solid #E7D29D;
+    border-radius:16px;
+    color:#8A6A1F;
+    padding:6px 14px;
+    font:600 11pt &quot;Poppins&quot;;
+}
+
+/* 💜 Study */
+QPushButton#btnTagStudy{
+    background:#E7D9FF;
+    border:1.5px solid #C8B0F7;
+    border-radius:16px;
+    color:#6B4FB0;
+    padding:6px 14px;
+    font:600 11pt &quot;Poppins&quot;;
+}
+
+/* 🌱 Peaceful */
+QPushButton#btnTagPeaceful{
+    background:#DDF5E4;
+    border:1.5px solid #B9E6C5;
+    border-radius:16px;
+    color:#4F8B63;
+    padding:6px 14px;
+    font:600 11pt &quot;Poppins&quot;;
+}
+
+/* 🍑 Family */
+QPushButton#btnTagFamily{
+    background:#FFE4D3;
+    border:1.5px solid #F6BEA1;
+    border-radius:16px;
+    color:#AF6944;
+    padding:6px 14px;
+    font:600 11pt &quot;Poppins&quot;;
+}
+
+/* 💙 Health */
+QPushButton#btnTagHealth{
+    background:#DCEEFF;
+    border:1.5px solid #B6D7F7;
+    border-radius:16px;
+    color:#4B6FA3;
+    padding:6px 14px;
+    font:600 11pt &quot;Poppins&quot;;
+}QPushButton#btnTagGrateful:hover{background:#F5E3B5;}
+QPushButton#btnTagStudy:hover{background:#DAC8FF;}
+QPushButton#btnTagPeaceful:hover{background:#CDEFD8;}
+QPushButton#btnTagFamily:hover{background:#FFD5BD;}
+QPushButton#btnTagHealth:hover{background:#CFE7FF;}
+QPushButton#btnTagGrateful:checked{border:2px solid #C99E24;}
+QPushButton#btnTagStudy:checked{border:2px solid #8561E9;}
+QPushButton#btnTagPeaceful:checked{border:2px solid #5FAE76;}
+QPushButton#btnTagFamily:checked{border:2px solid #E98A5F;}
+QPushButton#btnTagHealth:checked{border:2px solid #6AA9E9;}
+
+QPushButton#btnBackFromJournal,
+QPushButton#btnBackFromMood,
+QPushButton#btnBackFromHabits,
+QPushButton#btnBackFromHistory,
+QPushButton#btnBackFromBooks,
+QPushButton#btnBackFromQuote
+{
+    background-color: #FFF8F8;
+    border: 1px solid #F6CDD8;
+    border-radius: 12px;
+
+    color: #A85A79;
+
+    font-family: &quot;Poppins&quot;;
+    font-size: 10pt;
+    font-weight: 500;
+
+    padding: 6px 14px;
+}
+
+QPushButton#btnBackFromJournal:hover,
+QPushButton#btnBackFromMood:hover,
+QPushButton#btnBackFromHabits:hover,
+QPushButton#btnBackFromHistory:hover,
+QPushButton#btnBackFromBooks:hover
+{
+    background-color: #FFE9F1;
+    border: 1px solid #F6CDD8;
+}
+
+QPushButton#btnBackFromJournal:pressed,
+QPushButton#btnBackFromMood:pressed,
+QPushButton#btnBackFromHabits:pressed,
+QPushButton#btnBackFromHistory:pressed,
+QPushButton#btnBackFromBooks:pressed
+{
+    background-color: #F7D6E3;
+    border: 1px solid #F6CDD8;
+}</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout_3">
+    <item row="0" column="0">
+     <widget class="QStackedWidget" name="stackedWidget">
+      <property name="maximumSize">
+       <size>
+        <width>1000</width>
+        <height>750</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <family>Segoe Print</family>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">/* Mood page background */
+QWidget#pageMood {
+    background-color: #FFF0F3;
+}
+
+
+/* &quot;How are you feeling today?&quot; label */
+QLabel#labelMoodQuestion {
+    background-color: white;
+    border: 1.5px solid #F7C5D5;
+    border-radius: 14px;
+    padding: 14px 20px;
+    font-size: 15px;
+    color: #C45C8A;
+    font-weight: bold;
+}
+
+/* Emoji mood buttons - all 5 */
+QPushButton#btnMoodLow,
+QPushButton#btnMoodMeh,
+QPushButton#btnMoodGood,
+QPushButton#btnMoodGreat,
+QPushButton#btnMoodAmazing {
+    background-color: white;
+    border: 1.5px solid #F7C5D5;
+    border-radius: 16px;
+    font-size: 28px;
+    padding: 12px 8px;
+    color: #4A4A4A;
+    min-width: 80px;
+    min-height: 90px;
+}
+
+QPushButton#btnMoodLow:hover,
+QPushButton#btnMoodMeh:hover,
+QPushButton#btnMoodGood:hover,
+QPushButton#btnMoodGreat:hover,
+QPushButton#btnMoodAmazing:hover {
+    background-color: #FFE4EE;
+    border: 1.5px solid #E8649A;
+}
+
+QPushButton#btnMoodLow:checked,
+QPushButton#btnMoodMeh:checked,
+QPushButton#btnMoodGood:checked,
+QPushButton#btnMoodGreat:checked,
+QPushButton#btnMoodAmazing:checked {
+    background-color: #FFD6E7;
+    border: 2.5px solid #E8649A;
+}
+
+/* Optional note input */
+QLabel#labelMoodNoteTitle {
+    font-size: 30px;
+    font-weight: bold;
+    color: #C45C8A;
+    background: transparent;
+}
+
+QLineEdit#lineEditMoodNote {
+    background-color: white;
+    border: 1.5px solid #F7C5D5;
+    border-radius: 12px;
+    padding: 10px 16px;
+    font-size: 13px;
+    color: #4A4A4A;
+    min-height: 40px;
+}
+
+QLineEdit#lineEditMoodNote:focus {
+    border: 1.5px solid #E8649A;
+}
+
+/* Status label */
+QLabel#labelMoodStatus {
+    font-size: 15px;
+    background: transparent;
+    font-style: italic;
+}
+
+/* Save mood button */
+QPushButton#btnSaveMood {
+    background-color: #E8649A;
+    color: white;
+    border: none;
+    border-radius: 14px;
+    padding: 12px 30px;
+    font-size: 14px;
+    font-weight: bold;
+    min-height: 10
+px;
+}
+
+QPushButton#btnSaveMood:hover {
+    background-color: #D4507E;
+}
+
+QPushButton#btnSaveMood:pressed {
+    background-color: #C03060;
+}
+
+
+
+QPushButton#btnBackFromMood:hover {
+    background-color: #FFE4EE;
+}</string>
+      </property>
+      <property name="currentIndex">
+       <number>5</number>
+      </property>
+      <widget class="QWidget" name="pageJournal">
+       <widget class="QPushButton" name="btnBackFromJournal">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>570</y>
+          <width>70</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true"/>
+        </property>
+        <property name="text">
+         <string>←Back</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEditTitle">
+        <property name="geometry">
+         <rect>
+          <x>60</x>
+          <y>150</y>
+          <width>491</width>
+          <height>51</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">/* 🌸 Journal Title */
+
+QLineEdit#lineEditTitle
+{
+    background-color: #FFFDFD;
+
+    border: 2px solid #F6CDD8;
+    border-radius: 18px;
+
+    padding: 10px 16px;
+
+    color: #6A4C58;
+
+    font-family: &quot;Poppins&quot;;
+    font-size: 12pt;
+}
+
+QLineEdit#lineEditTitle:focus
+{
+    border: 2px solid #EC87B0;
+}
+
+
+
+</string>
+        </property>
+        <property name="placeholderText">
+         <string>What's on your mind today? </string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="btnSave">
+        <property name="geometry">
+         <rect>
+          <x>270</x>
+          <y>560</y>
+          <width>120</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">
+ background:qlineargradient(x1:0,y1:0,x2:0,y2:1,
+                               stop:0 #FFEAF2,
+                               stop:1 #FFD8E8);
+
+    border:2px solid #F6BDD2;
+    border-radius:14px;
+
+    color:#A44D74;
+
+    font-family:&quot;Poppins&quot;;
+    font-size:11pt;
+    font-weight:600;
+
+    padding:8px 16px;
+
+QPushButton#btnSave:hover
+{
+    background:#FFD8EA;
+    border:2px solid #EC87B0;
+}
+
+QPushButton#btnSave:pressed
+{
+    background:#F7BED6;
+}</string>
+        </property>
+        <property name="text">
+         <string>Save Entry</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="btnAddSticker">
+        <property name="geometry">
+         <rect>
+          <x>630</x>
+          <y>40</y>
+          <width>145</width>
+          <height>35</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton#btnAddSticker
+{
+    background:qlineargradient(x1:0,y1:0,x2:0,y2:1,
+                               stop:0 #FFEAF2,
+                               stop:1 #FFD8E8);
+
+    border:2px solid #F6BDD2;
+    border-radius:14px;
+
+    color:#A44D74;
+
+    font-family:&quot;Poppins&quot;;
+    font-size:11pt;
+    font-weight:600;
+
+    padding:8px 16px;
+}
+
+QPushButton#btnAddSticker:hover
+{
+    background:#FFD8EA;
+    border:2px solid #EC87B0;
+}
+
+QPushButton#btnAddSticker:pressed
+{
+    background:#F7BED6;
+}</string>
+        </property>
+        <property name="text">
+         <string>🎀 Add Sticker</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="myJournal">
+        <property name="geometry">
+         <rect>
+          <x>30</x>
+          <y>10</y>
+          <width>411</width>
+          <height>81</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Segoe Print</family>
+          <pointsize>-1</pointsize>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>My Journal</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_6">
+        <property name="geometry">
+         <rect>
+          <x>120</x>
+          <y>440</y>
+          <width>37</width>
+          <height>12</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+       <widget class="QTextEdit" name="textEditContent">
+        <property name="geometry">
+         <rect>
+          <x>60</x>
+          <y>210</y>
+          <width>501</width>
+          <height>251</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">
+
+QTextEdit#textEditContent
+{
+    background-color: #FFFDFD;
+
+    border: 2px solid #F6CDD8;
+    border-radius: 22px;
+
+    padding: 14px;
+
+    color: #5A4758;
+
+    font-family: &quot;Nunito&quot;;
+    font-size: 11pt;
+
+    selection-background-color: #F8C8DC;
+}
+
+QTextEdit#textEditContent:focus
+{
+    border: 2px solid #EC87B0;
+}</string>
+        </property>
+        <property name="placeholderText">
+         <string>Write Freely......</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_8">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>40</y>
+          <width>631</width>
+          <height>481</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap resource="resources.qrc">:/assets/journalBack.png</pixmap>
+        </property>
+        <property name="scaledContents">
+         <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_10">
+        <property name="geometry">
+         <rect>
+          <x>570</x>
+          <y>20</y>
+          <width>91</width>
+          <height>81</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap resource="resources.qrc">:/assets/butterfly.png</pixmap>
+        </property>
+        <property name="scaledContents">
+         <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_11">
+        <property name="geometry">
+         <rect>
+          <x>610</x>
+          <y>80</y>
+          <width>191</width>
+          <height>291</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap resource="resources.qrc">:/assets/dog.png</pixmap>
+        </property>
+        <property name="scaledContents">
+         <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="QWidget" name="layoutWidget">
+        <property name="geometry">
+         <rect>
+          <x>80</x>
+          <y>520</y>
+          <width>481</width>
+          <height>32</height>
+         </rect>
+        </property>
+        <layout class="QHBoxLayout" name="horizontalLayout_3">
+         <item>
+          <widget class="QPushButton" name="btnTagGrateful">
+           <property name="text">
+            <string>grateful</string>
+           </property>
+           <property name="checkable">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="btnTagFamily">
+           <property name="text">
+            <string>family</string>
+           </property>
+           <property name="checkable">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="btnTagStudy">
+           <property name="text">
+            <string>study</string>
+           </property>
+           <property name="checkable">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="btnTagPeaceful">
+           <property name="text">
+            <string>peaceful</string>
+           </property>
+           <property name="checkable">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="btnTagHealth">
+           <property name="text">
+            <string>health</string>
+           </property>
+           <property name="checkable">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+       <zorder>layoutWidget</zorder>
+       <zorder>label_8</zorder>
+       <zorder>btnBackFromJournal</zorder>
+       <zorder>lineEditTitle</zorder>
+       <zorder>btnSave</zorder>
+       <zorder>btnAddSticker</zorder>
+       <zorder>myJournal</zorder>
+       <zorder>label_6</zorder>
+       <zorder>textEditContent</zorder>
+       <zorder>label_10</zorder>
+       <zorder>label_11</zorder>
+      </widget>
+      <widget class="QWidget" name="pageHistory">
+       <widget class="QPushButton" name="btnBackFromHistory">
+        <property name="geometry">
+         <rect>
+          <x>30</x>
+          <y>40</y>
+          <width>71</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>←Back</string>
+        </property>
+       </widget>
+       <widget class="QListWidget" name="listWidgetHistory">
+        <property name="geometry">
+         <rect>
+          <x>30</x>
+          <y>190</y>
+          <width>731</width>
+          <height>351</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QListWidget#listWidgetHistory
+{
+    background: #FFF9FB;
+    border: 2px solid #F7C7D7;
+    border-radius: 22px;
+
+    padding: 12px;
+    outline: none;
+
+    font-family: &quot;Poppins&quot;;
+    font-size: 11pt;
+    color: #7A5A68;
+}
+QListWidget#listWidgetHistory::item
+{
+    background: #FFFFFF;
+
+    border: 2px solid #F9D8E4;
+    border-radius: 18px;
+
+    margin: 8px;
+    padding: 16px;
+
+    min-height: 60px;
+}
+QListWidget#listWidgetHistory::item:hover
+{
+    background: #FFF1F6;
+    border: 2px solid #F6AFC7;
+}
+QListWidget#listWidgetHistory::item:selected
+{
+    background: #FFE4EF;
+    border: 2px solid #EC7CA6;
+
+    color: #B34873;
+}
+QScrollBar:vertical
+{
+    background: transparent;
+    width: 14px;
+    border: none;
+}
+
+QScrollBar::handle:vertical
+{
+    background: #F4B5CA;
+    border-radius: 7px;
+    min-height: 45px;
+}
+
+QScrollBar::handle:vertical:hover
+{
+    background: #EB90B2;
+}
+
+QScrollBar::add-line:vertical,
+QScrollBar::sub-line:vertical
+{
+    height:0px;
+}
+
+QScrollBar::add-page:vertical,
+QScrollBar::sub-page:vertical
+{
+    background: transparent;
+}</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_23">
+        <property name="geometry">
+         <rect>
+          <x>240</x>
+          <y>70</y>
+          <width>291</width>
+          <height>81</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Segoe Print</family>
+          <pointsize>28</pointsize>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">
+    color: #B25B7D;
+    font-family: &quot;Segoe Print&quot;;
+    font-weight: bold;
+    background: transparent;
+</string>
+        </property>
+        <property name="text">
+         <string>Past Entries</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignmentFlag::AlignCenter</set>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_24">
+        <property name="geometry">
+         <rect>
+          <x>500</x>
+          <y>20</y>
+          <width>191</width>
+          <height>211</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap resource="resources.qrc">:/assets2/cat.png</pixmap>
+        </property>
+        <property name="scaledContents">
+         <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_25">
+        <property name="geometry">
+         <rect>
+          <x>-30</x>
+          <y>190</y>
+          <width>131</width>
+          <height>241</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap resource="resources.qrc">:/assets2/leaf.png</pixmap>
+        </property>
+        <property name="scaledContents">
+         <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_26">
+        <property name="geometry">
+         <rect>
+          <x>200</x>
+          <y>60</y>
+          <width>101</width>
+          <height>101</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap resource="resources.qrc">:/assets2/spark.png</pixmap>
+        </property>
+        <property name="scaledContents">
+         <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_27">
+        <property name="geometry">
+         <rect>
+          <x>630</x>
+          <y>430</y>
+          <width>171</width>
+          <height>221</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap resource="resources.qrc">:/assets2/camera.png</pixmap>
+        </property>
+        <property name="scaledContents">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="pageMood">
+       <widget class="QPushButton" name="btnBackFromMood">
+        <property name="geometry">
+         <rect>
+          <x>30</x>
+          <y>30</y>
+          <width>71</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>←Back</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="btnSaveMood">
+        <property name="geometry">
+         <rect>
+          <x>30</x>
+          <y>350</y>
+          <width>141</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Save Mood</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="labelMoodStatus">
+        <property name="geometry">
+         <rect>
+          <x>70</x>
+          <y>420</y>
+          <width>381</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>-1</pointsize>
+          <italic>true</italic>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>No mood logged today</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="labelMoodTitle">
+        <property name="geometry">
+         <rect>
+          <x>260</x>
+          <y>50</y>
+          <width>221</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Segoe Print</family>
+          <pointsize>-1</pointsize>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">/* Page title */
+QLabel#labelMoodTitle {
+    font-size: 22px;
+    font-weight: bold;
+    color: #E8649A;
+    background: transparent;
+}
+</string>
+        </property>
+        <property name="text">
+         <string>Mood Tracker 🌸</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignmentFlag::AlignCenter</set>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_9">
+        <property name="geometry">
+         <rect>
+          <x>170</x>
+          <y>-20</y>
+          <width>381</width>
+          <height>371</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap resource="resources.qrc">:/assets2/notes.png</pixmap>
+        </property>
+        <property name="scaledContents">
+         <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_16">
+        <property name="geometry">
+         <rect>
+          <x>220</x>
+          <y>120</y>
+          <width>301</width>
+          <height>51</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Script MT Bold</family>
+          <pointsize>16</pointsize>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>How are you feeling today ?</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignmentFlag::AlignCenter</set>
+        </property>
+       </widget>
+       <widget class="QWidget" name="layoutWidget">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>200</y>
+          <width>751</width>
+          <height>151</height>
+         </rect>
+        </property>
+        <layout class="QHBoxLayout" name="horizontalLayout_4">
+         <item>
+          <widget class="QPushButton" name="btnMoodLow">
+           <property name="text">
+            <string>😔
+Low</string>
+           </property>
+           <property name="checkable">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="btnMoodGreat">
+           <property name="text">
+            <string>😄
+Great</string>
+           </property>
+           <property name="checkable">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="btnMoodMeh">
+           <property name="text">
+            <string>😕
+Meh</string>
+           </property>
+           <property name="checkable">
+            <bool>true</bool>
+           </property>
+           <property name="checked">
+            <bool>false</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="btnMoodGood">
+           <property name="text">
+            <string>😊
+Good</string>
+           </property>
+           <property name="checkable">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="btnMoodAmazing">
+           <property name="text">
+            <string>🤩
+Amazing</string>
+           </property>
+           <property name="checkable">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QLabel" name="label_17">
+        <property name="geometry">
+         <rect>
+          <x>-90</x>
+          <y>320</y>
+          <width>921</width>
+          <height>351</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap resource="resources.qrc">:/assets2/pinknote.png</pixmap>
+        </property>
+        <property name="scaledContents">
+         <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEditMoodNote">
+        <property name="geometry">
+         <rect>
+          <x>70</x>
+          <y>460</y>
+          <width>631</width>
+          <height>81</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>-1</pointsize>
+         </font>
+        </property>
+        <property name="placeholderText">
+         <string>Write Something about your Today's Mood ................</string>
+        </property>
+       </widget>
+       <zorder>label_9</zorder>
+       <zorder>label_17</zorder>
+       <zorder>layoutWidget</zorder>
+       <zorder>btnBackFromMood</zorder>
+       <zorder>btnSaveMood</zorder>
+       <zorder>labelMoodStatus</zorder>
+       <zorder>labelMoodTitle</zorder>
+       <zorder>label_16</zorder>
+       <zorder>lineEditMoodNote</zorder>
+      </widget>
+      <widget class="QWidget" name="pageHome">
+       <widget class="QLabel" name="labelAppName">
+        <property name="geometry">
+         <rect>
+          <x>250</x>
+          <y>30</y>
+          <width>351</width>
+          <height>100</height>
+         </rect>
+        </property>
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="font">
+         <font>
+          <family>Segoe Print</family>
+          <pointsize>-1</pointsize>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>MindScape</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="labelGreeting">
+        <property name="geometry">
+         <rect>
+          <x>250</x>
+          <y>110</y>
+          <width>191</width>
+          <height>51</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>-1</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Hello Buddy!&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="btnJournal">
+        <property name="geometry">
+         <rect>
+          <x>250</x>
+          <y>190</y>
+          <width>160</width>
+          <height>130</height>
+         </rect>
+        </property>
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>56</width>
+          <height>18</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>160</width>
+          <height>130</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>Segoe Print</family>
+          <pointsize>-1</pointsize>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>📓
+Journal</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="btnMood">
+        <property name="geometry">
+         <rect>
+          <x>430</x>
+          <y>190</y>
+          <width>160</width>
+          <height>130</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Segoe Print</family>
+          <pointsize>-1</pointsize>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>🌤️
+ Mood</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="btnQuote">
+        <property name="geometry">
+         <rect>
+          <x>610</x>
+          <y>190</y>
+          <width>160</width>
+          <height>130</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Segoe Print</family>
+          <pointsize>-1</pointsize>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>🌿
+ Quote</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="btnHabits">
+        <property name="geometry">
+         <rect>
+          <x>250</x>
+          <y>340</y>
+          <width>160</width>
+          <height>130</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Segoe Print</family>
+          <pointsize>-1</pointsize>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>☑️ 
+Habits</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="btnHistory">
+        <property name="geometry">
+         <rect>
+          <x>610</x>
+          <y>340</y>
+          <width>160</width>
+          <height>130</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Segoe Print</family>
+          <pointsize>-1</pointsize>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>📜
+ History</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="btnBooks">
+        <property name="geometry">
+         <rect>
+          <x>430</x>
+          <y>340</y>
+          <width>160</width>
+          <height>130</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Segoe Print</family>
+          <pointsize>-1</pointsize>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>📚
+ Books</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_2">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>140</y>
+          <width>231</width>
+          <height>381</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap resource="resources.qrc">:/assets/dog2.png</pixmap>
+        </property>
+        <property name="scaledContents">
+         <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_3">
+        <property name="geometry">
+         <rect>
+          <x>-90</x>
+          <y>-10</y>
+          <width>271</width>
+          <height>211</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap resource="resources.qrc">:/assets/lights3.png</pixmap>
+        </property>
+        <property name="scaledContents">
+         <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_4">
+        <property name="geometry">
+         <rect>
+          <x>610</x>
+          <y>30</y>
+          <width>171</width>
+          <height>161</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap resource="resources.qrc">:/assets2/teddy2.png</pixmap>
+        </property>
+        <property name="scaledContents">
+         <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_5">
+        <property name="geometry">
+         <rect>
+          <x>120</x>
+          <y>10</y>
+          <width>121</width>
+          <height>111</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap resource="resources.qrc">:/assets/star.png</pixmap>
+        </property>
+        <property name="scaledContents">
+         <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_7">
+        <property name="geometry">
+         <rect>
+          <x>70</x>
+          <y>0</y>
+          <width>121</width>
+          <height>111</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap resource="resources.qrc">:/assets/star.png</pixmap>
+        </property>
+        <property name="scaledContents">
+         <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="QFrame" name="streakFrame">
+        <property name="geometry">
+         <rect>
+          <x>30</x>
+          <y>490</y>
+          <width>731</width>
+          <height>111</height>
+         </rect>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::Shape::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Shadow::Raised</enum>
+        </property>
+        <widget class="QLabel" name="labelStreakNumber">
+         <property name="geometry">
+          <rect>
+           <x>130</x>
+           <y>20</y>
+           <width>200</width>
+           <height>31</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>Segoe Print</family>
+           <pointsize>-1</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>7 Day Streak</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="labelStreakSub">
+         <property name="geometry">
+          <rect>
+           <x>130</x>
+           <y>50</y>
+           <width>131</width>
+           <height>40</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Keep going, you're doing &lt;br/&gt;amazing!&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="labelBunnyStreak">
+         <property name="geometry">
+          <rect>
+           <x>-10</x>
+           <y>-40</y>
+           <width>151</width>
+           <height>201</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="pixmap">
+          <pixmap resource="resources.qrc">:/assets/bunny3.png</pixmap>
+         </property>
+         <property name="scaledContents">
+          <bool>true</bool>
+         </property>
+        </widget>
+        <widget class="QWidget" name="layoutWidget">
+         <property name="geometry">
+          <rect>
+           <x>310</x>
+           <y>20</y>
+           <width>391</width>
+           <height>21</height>
+          </rect>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout">
+          <item>
+           <widget class="QLabel" name="labelDayMon">
+            <property name="text">
+             <string>M</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignmentFlag::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="labelDayTue">
+            <property name="text">
+             <string>T</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignmentFlag::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="labelDayWed">
+            <property name="text">
+             <string>W</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignmentFlag::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="labelDayThu">
+            <property name="text">
+             <string>T</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignmentFlag::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="labelDayFri">
+            <property name="text">
+             <string>F</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignmentFlag::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="labelDaySat">
+            <property name="text">
+             <string>S</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignmentFlag::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="labelDaySun">
+            <property name="text">
+             <string>S</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignmentFlag::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="layoutWidget">
+         <property name="geometry">
+          <rect>
+           <x>310</x>
+           <y>60</y>
+           <width>391</width>
+           <height>31</height>
+          </rect>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_2">
+          <item>
+           <widget class="QLabel" name="labelIconMon">
+            <property name="text">
+             <string>TextLabel</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="labelIconTue">
+            <property name="text">
+             <string>TextLabel</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="labelIconWed">
+            <property name="text">
+             <string>TextLabel</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="labelIconThu">
+            <property name="text">
+             <string>TextLabel</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="labelIconFri">
+            <property name="text">
+             <string>TextLabel</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="labelIconSat">
+            <property name="text">
+             <string>TextLabel</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="labelIconSun">
+            <property name="text">
+             <string>TextLabel</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="pageBooks">
+       <widget class="QLabel" name="labelBooks">
+        <property name="geometry">
+         <rect>
+          <x>190</x>
+          <y>60</y>
+          <width>400</width>
+          <height>45</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Segoe Print</family>
+          <pointsize>-1</pointsize>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel#labelBooks
+{
+ font-size: 33px;
+    font-weight: bold;
+    color: #E8649A;
+
+}</string>
+        </property>
+        <property name="text">
+         <string>📖 Reading Corner</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignmentFlag::AlignCenter</set>
+        </property>
+       </widget>
+       <widget class="QScrollArea" name="scrollAreaBooks">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>160</y>
+          <width>751</width>
+          <height>431</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">/* 📚 Books Scroll Area */
+
+QScrollArea#scrollAreaBooks
+{
+    background-color: #FFF8F8;
+    border: 2px solid #F6CDD8;
+    border-radius: 22px;
+}
+
+QScrollArea#scrollAreaBooks &gt; QWidget &gt; QWidget
+{
+    background-color: #FFF8F8;
+}
+</string>
+        </property>
+        <property name="widgetResizable">
+         <bool>true</bool>
+        </property>
+        <widget class="QWidget" name="scrollAreaWidgetContents">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>747</width>
+           <height>427</height>
+          </rect>
+         </property>
+        </widget>
+       </widget>
+       <widget class="QPushButton" name="btnBackFromBooks">
+        <property name="geometry">
+         <rect>
+          <x>30</x>
+          <y>30</y>
+          <width>71</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>←Back</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>110</y>
+          <width>200</width>
+          <height>40</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Segoe Print</family>
+          <pointsize>22</pointsize>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>My Library</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="pageQuote">
+       <widget class="QPushButton" name="btnBackFromQuote">
+        <property name="geometry">
+         <rect>
+          <x>50</x>
+          <y>40</y>
+          <width>71</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>←Back</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="labelQuoteText">
+        <property name="geometry">
+         <rect>
+          <x>80</x>
+          <y>160</y>
+          <width>600</width>
+          <height>361</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Cormorant Garamond</family>
+          <pointsize>24</pointsize>
+          <italic>true</italic>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">
+    
+QLabel#labelQuoteText
+{
+background:#FFFDF9;
+
+    border:2px solid #F4DCC7;
+    border-radius:22px;
+
+    color:#4A4A4A;
+
+    font-family:&quot;Cormorant Garamond&quot;;
+    font-size:24pt;
+    font-style:italic;
+
+    padding:20px;
+}
+</string>
+        </property>
+        <property name="text">
+         <string>TextLabel</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignmentFlag::AlignCenter</set>
+        </property>
+        <property name="wordWrap">
+         <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="QLabel" name="labelQuoteAuthor">
+        <property name="geometry">
+         <rect>
+          <x>280</x>
+          <y>470</y>
+          <width>201</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel#labelQuoteAuthor
+{
+    background:transparent;
+
+    color:#7D6E69;
+
+    font-family:&quot;Poppins&quot;;
+    font-size:12pt;
+}</string>
+        </property>
+        <property name="text">
+         <string>TextLabel</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignmentFlag::AlignCenter</set>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="btnNewQuote">
+        <property name="geometry">
+         <rect>
+          <x>80</x>
+          <y>540</y>
+          <width>161</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton#btnNewQuote
+{
+    background:qlineargradient(
+        x1:0,y1:0,
+        x2:1,y2:1,
+        stop:0 #EEF8E6,
+        stop:1 #DFF1CF);
+
+    border:2px solid #C8E2B5;
+    border-radius:18px;
+
+    color:#5C7D46;
+
+    font-family:&quot;Poppins&quot;;
+    font-size:11pt;
+    font-weight:600;
+
+    padding:10px 22px;
+}
+
+QPushButton#btnNewQuote:hover
+{
+    background:#E4F5D8;
+}
+
+QPushButton#btnNewQuote:pressed
+{
+    background:#D7EDC6;
+}</string>
+        </property>
+        <property name="text">
+         <string>🌿 New Quote</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="btnFavouriteQuote">
+        <property name="geometry">
+         <rect>
+          <x>540</x>
+          <y>540</y>
+          <width>141</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton#btnFavouriteQuote
+{
+    background:qlineargradient(
+        x1:0,y1:0,
+        x2:1,y2:1,
+        stop:0 #FFE6EE,
+        stop:1 #FFD4E3);
+
+    border:2px solid #F8B7CB;
+    border-radius:18px;
+
+    color:#D85F93;
+
+    font-family:&quot;Poppins&quot;;
+    font-size:11pt;
+    font-weight:600;
+
+    padding:10px 22px;
+}
+
+QPushButton#btnFavouriteQuote:hover
+{
+    background:#FFDCE8;
+}
+
+QPushButton#btnFavouriteQuote:pressed
+{
+    background:#FFCFE0;
+}</string>
+        </property>
+        <property name="text">
+         <string>💗 Favorite</string>
+        </property>
+        <property name="checkable">
+         <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_18">
+        <property name="geometry">
+         <rect>
+          <x>270</x>
+          <y>70</y>
+          <width>241</width>
+          <height>61</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Segoe Print</family>
+          <pointsize>30</pointsize>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">
+
+    color:#D86593;
+
+  
+    font-size:30pt;
+    font-weight:bold;
+
+    background:transparent;
+</string>
+        </property>
+        <property name="text">
+         <string>Daily Quote 🎀</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_20">
+        <property name="geometry">
+         <rect>
+          <x>590</x>
+          <y>350</y>
+          <width>141</width>
+          <height>201</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap resource="resources.qrc">:/assets2/flowerss.png</pixmap>
+        </property>
+        <property name="scaledContents">
+         <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_21">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>120</y>
+          <width>141</width>
+          <height>201</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap resource="resources.qrc">:/assets2/flowerss.png</pixmap>
+        </property>
+        <property name="scaledContents">
+         <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_19">
+        <property name="geometry">
+         <rect>
+          <x>50</x>
+          <y>240</y>
+          <width>281</width>
+          <height>401</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap resource="resources.qrc">:/assets/sides.png</pixmap>
+        </property>
+        <property name="scaledContents">
+         <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_22">
+        <property name="geometry">
+         <rect>
+          <x>520</x>
+          <y>-150</y>
+          <width>371</width>
+          <height>401</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap resource="resources.qrc">:/assets2/hanging.png</pixmap>
+        </property>
+        <property name="scaledContents">
+         <bool>true</bool>
+        </property>
+       </widget>
+       <zorder>labelQuoteText</zorder>
+       <zorder>label_19</zorder>
+       <zorder>btnBackFromQuote</zorder>
+       <zorder>labelQuoteAuthor</zorder>
+       <zorder>btnNewQuote</zorder>
+       <zorder>btnFavouriteQuote</zorder>
+       <zorder>label_18</zorder>
+       <zorder>label_20</zorder>
+       <zorder>label_21</zorder>
+       <zorder>label_22</zorder>
+      </widget>
+      <widget class="QWidget" name="pageHabits">
+       <widget class="QPushButton" name="btnBackFromHabits">
+        <property name="geometry">
+         <rect>
+          <x>30</x>
+          <y>30</y>
+          <width>70</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>←Back</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_12">
+        <property name="geometry">
+         <rect>
+          <x>280</x>
+          <y>90</y>
+          <width>400</width>
+          <height>45</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Segoe Print</family>
+          <pointsize>-1</pointsize>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">font-size: 33px;
+    font-weight: bold;
+    color: #E8649A;</string>
+        </property>
+        <property name="text">
+         <string>🎀 Habits 🎀</string>
+        </property>
+       </widget>
+       <widget class="QScrollArea" name="scrollAreaHabits">
+        <property name="geometry">
+         <rect>
+          <x>30</x>
+          <y>210</y>
+          <width>721</width>
+          <height>301</height>
+         </rect>
+        </property>
+        <property name="widgetResizable">
+         <bool>true</bool>
+        </property>
+        <widget class="QWidget" name="habitCardsContainer">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>719</width>
+           <height>299</height>
+          </rect>
+         </property>
+        </widget>
+       </widget>
+       <widget class="QLineEdit" name="lineEditNewHabit">
+        <property name="geometry">
+         <rect>
+          <x>30</x>
+          <y>160</y>
+          <width>581</width>
+          <height>45</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLineEdit#lineEditNewHabit
+{
+    background-color: #FFFDFD;
+
+    border: 2px solid #F6CDD8;
+    border-radius: 18px;
+
+    padding: 10px 16px;
+
+    color: #6A4C58;
+
+    font-family: &quot;Poppins&quot;;
+    font-size: 11pt;
+
+    selection-background-color: #F8BDD1;
+}
+
+QLineEdit#lineEditNewHabit:focus
+{
+    border: 2px solid #EC87B0;
+    background-color: #FFFFFF;
+}</string>
+        </property>
+        <property name="placeholderText">
+         <string>🌸 Enter a new habit...</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="btnAddHabitlist">
+        <property name="geometry">
+         <rect>
+          <x>620</x>
+          <y>160</y>
+          <width>131</width>
+          <height>45</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton#btnAddHabitlist
+{
+    background: qlineargradient(
+        x1:0, y1:0,
+        x2:0, y2:1,
+        stop:0 #FFBDD4,
+        stop:1 #F69CBC
+    );
+
+    border: none;
+    border-radius: 18px;
+
+    color: white;
+
+    font-family: &quot;Poppins&quot;;
+    font-size: 11pt;
+    font-weight: 600;
+
+    padding: 8px 18px;
+}
+QPushButton#btnAddHabitlist:hover
+{
+    background: qlineargradient(
+        x1:0, y1:0,
+        x2:0, y2:1,
+        stop:0 #FFC8DB,
+        stop:1 #F8A9C7
+    );
+}
+QPushButton#btnAddHabitlist:pressed
+{
+    background: #EC82AE;
+}</string>
+        </property>
+        <property name="text">
+         <string>+ Add Habit</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_15">
+        <property name="geometry">
+         <rect>
+          <x>30</x>
+          <y>530</y>
+          <width>721</width>
+          <height>71</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">
+    background: qlineargradient(
+        x1:0, y1:0,
+        x2:1, y2:1,
+        stop:0 #FFF8E8,
+        stop:0.5 #FFECC8,
+        stop:1 #FFD9A8
+    );
+
+    border: 1px solid #F6D39A;
+    border-radius: 18px;
+</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_14">
+        <property name="geometry">
+         <rect>
+          <x>650</x>
+          <y>500</y>
+          <width>101</width>
+          <height>111</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap resource="resources.qrc">:/assets/teddy.png</pixmap>
+        </property>
+        <property name="scaledContents">
+         <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_13">
+        <property name="geometry">
+         <rect>
+          <x>50</x>
+          <y>530</y>
+          <width>200</width>
+          <height>50</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Poppins</family>
+          <pointsize>14</pointsize>
+          <fontweight>DemiBold</fontweight>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">
+    background: transparent;
+
+    color: #8A5B24;
+
+    font-family: &quot;Poppins&quot;;
+    font-size: 12.5
+pt;
+    font-weight: 600;
+
+   
+
+</string>
+        </property>
+        <property name="text">
+         <string>Great job today!</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="labelHabitProgress">
+        <property name="geometry">
+         <rect>
+          <x>50</x>
+          <y>560</y>
+          <width>200</width>
+          <height>40</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel#labelHabitProgress
+{
+    background: transparent;
+
+    color: #7A6A58;
+
+    font-family: &quot;Poppins&quot;;
+    font-size: 11pt;
+}</string>
+        </property>
+        <property name="text">
+         <string>0/0 completed today</string>
+        </property>
+       </widget>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>18</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources>
+  <include location="resources.qrc"/>
+ </resources>
+ <connections/>
+</ui>

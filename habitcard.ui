@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>HabitCard</class>
+ <widget class="QWidget" name="HabitCard">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>602</width>
+    <height>64</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">/* Habit page background */
+QWidget#pageHabits {
+    background-color: #FFF0F3;
+}
+
+QScrollArea#scrollAreaHabits {
+    background: transparent;
+    border: none;
+}
+
+QScrollArea#scrollAreaHabits &gt; QWidget &gt; QWidget {
+    background: transparent;
+}
+
+/* Line edit for new habit */
+QLineEdit#lineEditNewHabit {
+    background: white;
+    border: 1.5px solid #F7C5D5;
+    border-radius: 12px;
+    padding: 8px 14px;
+    font-size: 13px;
+    color: #C45C8A;
+}
+
+QLineEdit#lineEditNewHabit::placeholder {
+    color: #D4A0B8;
+}
+
+/* Add habit button */
+QPushButton#btnAddHabitlist {
+    background-color: #E8649A;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 8px 18px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+QPushButton#btnAddHabitlist:hover {
+    background-color: #D4507E;
+}
+
+/* Progress label */
+QLabel#labelHabitProgress {
+    background-color: #FFE4EE;
+    border: 1px solid #F7C5D5;
+    border-radius: 10px;
+    padding: 6px 14px;
+    font-size: 13px;
+    color: #E8649A;
+    font-weight: bold;
+}
+
+/* Habits page title */
+QLabel#labelHabitsTitle {
+    font-size: 22px;
+    font-weight: bold;
+    color: #E8649A;
+    background: transparent;
+}</string>
+  </property>
+  <widget class="QWidget" name="layoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>-80</x>
+     <y>20</y>
+     <width>721</width>
+     <height>44</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <widget class="QLabel" name="labelEmoji">
+      <property name="font">
+       <font>
+        <pointsize>22</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>TextLabel</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignmentFlag::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="labelName">
+      <property name="font">
+       <font>
+        <family>Segoe Print</family>
+        <pointsize>14</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>TextLabel</string>
+      </property>
+      <property name="wordWrap">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="labelStreak">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>130</width>
+        <height>42</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>130</width>
+        <height>42</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>11</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>TextLabel</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="btnCheck">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>35</width>
+        <height>35</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>35</width>
+        <height>35</height>
+       </size>
+      </property>
+      <property name="text">
+       <string>PushButton</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

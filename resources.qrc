@@ -1,0 +1,37 @@
+<RCC>
+    <qresource prefix="/">
+        <file>assets/lamp.jpg</file>
+        <file>assets/butterfly.png</file>
+        <file>assets/lamp2.png</file>
+        <file>assets/lights.png</file>
+        <file>assets/teddy.png</file>
+        <file>assets/dog.png</file>
+        <file>assets/dog2.png</file>
+        <file>assets/habits.png</file>
+        <file>assets/light.png</file>
+        <file>assets/note.jpg</file>
+        <file>assets/note2.png</file>
+        <file>assets/paper.png</file>
+        <file>assets/peace.png</file>
+        <file>assets/sides.png</file>
+        <file>assets/lights3.png</file>
+        <file>assets/star.png</file>
+        <file>assets/bunny.gif</file>
+        <file>assets/back.jpg</file>
+        <file>assets/journalBack.png</file>
+        <file>assets2/book.png</file>
+        <file>assets2/cat.png</file>
+        <file>assets2/cat2.png</file>
+        <file>assets2/decor.png</file>
+        <file>assets2/hanging.png</file>
+        <file>assets2/pinknote.png</file>
+        <file>assets2/rotatedLeaf.png</file>
+        <file>assets2/camera.png</file>
+        <file>assets2/flowerss.png</file>
+        <file>assets2/leaf.png</file>
+        <file>assets2/notes.png</file>
+        <file>assets2/teddy2.png</file>
+        <file>assets2/spark.png</file>
+        <file>assets/bunny3.png</file>
+    </qresource>
+</RCC>
