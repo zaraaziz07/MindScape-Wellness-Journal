@@ -10,7 +10,7 @@ A cozy desktop wellness journal built with <b>Qt (C++)</b> to help users reflect
 
 <p align="center">
 
-                      🌷 Journal • 📖 Reading Corner • 💖 Mood Tracker • 🌱 Habit Tracker • ✨ Quotes • 📚 History
+            🌷 Journal • 📖 Reading Corner • 💖 Mood Tracker • 🌱 Habit Tracker • ✨ Quotes • 📚 History
 
 </p>
 
