@@ -133,7 +133,7 @@ The application was built using **C++ and Qt Widgets**, with object-oriented des
 
 ## 📜 History
 
-![](screenshots/history.png)
+![](screenshots/hisitory.png)
 
 ---
 
@@ -239,8 +239,6 @@ Run the application.
 # 👩‍💻 Developer
 
 **Zara Aziz**
-
-Computer Science Student
 
 Passionate about creating aesthetic and meaningful software that combines functionality with beautiful user experiences.
 
